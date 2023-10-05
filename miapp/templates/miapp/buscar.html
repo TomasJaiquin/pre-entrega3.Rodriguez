@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de Búsqueda</title>
+</head>
+<body>
+    <header>
+        <h1>Mi Sitio Web</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Inicio</a></li>
+                <li><a href="{% url 'buscar' %}">Buscar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Resultados de Búsqueda</h2>
+        <ul>
+            {% for resultado in resultados %}
+            <li>{{ resultado.nombre }}</li>
+            {% empty %}
+            <li>No se encontraron resultados</li>
+            {% endfor %}
+        </ul>
+    </main>
+</body>
+</html>
